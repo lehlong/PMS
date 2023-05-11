@@ -37,53 +37,71 @@ namespace PROJECT.Service.Implements.AD
 
         public async Task<T_AD_USER> CheckUserAuthentication(Login user)
         {
-            var isvalidUsername = user.UserName.Trim();
-            var isvalidPassword = EncryptStringMD5(user.Password.Trim());
-
-            return await _context.T_AD_USER.FirstOrDefaultAsync(x => x.USER_NAME == isvalidUsername && x.PASSWORD == isvalidPassword && x.ACTIVE == "Y");
+            try
+            {
+                var isvalidUsername = user.UserName.Trim();
+                var isvalidPassword = EncryptStringMD5(user.Password.Trim());
+                return await _context.T_AD_USER.FirstOrDefaultAsync(x => x.USER_NAME == isvalidUsername && x.PASSWORD == isvalidPassword && x.ACTIVE == true);   
+                
+            } 
+            catch (Exception ex)
+            {
+                Status = false; 
+                Exception = ex;
+                return null;
+            }
         }
 
         public async Task<List<string>> GetRightUserAuthentication(string username)
         {
-            var isvalidUsername = username.Trim();
-
-            //Lấy các role quyền
-            var lstRole = new List<string>();
-            var userGroups = await _context.T_AD_USER_USER_GROUP.Where(x => x.USER_NAME == isvalidUsername).ToListAsync();
-
-            if (userGroups.Count > 0)
+            try
             {
-                foreach (var userGroup in userGroups)
+                var isvalidUsername = username.Trim();
+                //Lấy các role quyền
+                var lstRole = new List<string>();
+                var userGroups = await _context.T_AD_USER_USER_GROUP.Where(x => x.USER_NAME == isvalidUsername).ToListAsync();
+
+                if (userGroups.Count > 0)
                 {
-                    var roles = await _context.T_AD_USER_GROUP_ROLE.Where(x => x.USER_GROUP_CODE == userGroup.USER_GROUP_CODE).ToListAsync();
-                    if (roles.Count > 0)
+                    foreach (var userGroup in userGroups)
                     {
-                        foreach (var role in roles)
+                        var roles = await _context.T_AD_USER_GROUP_ROLE.Where(x => x.USER_GROUP_ID == userGroup.USER_GROUP_ID).ToListAsync();
+                        if (roles.Count > 0)
                         {
-                            var lstRight = await _context.T_AD_ROLE_DETAIL.Where(x => x.FK_ROLE == role.ROLE_CODE).ToListAsync();
-                            if (lstRight.Count > 0)
+                            foreach (var role in roles)
                             {
-                                foreach (var right in lstRight) lstRole.Add(right.FK_RIGHT);                       
+                                var lstRight = await _context.T_AD_ROLE_DETAIL.Where(x => x.FK_ROLE == role.ROLE_ID).ToListAsync();
+                                if (lstRight.Count > 0)
+                                {
+                                    foreach (var right in lstRight) lstRole.Add(right.FK_RIGHT);
+                                }
+                                else lstRole = new List<string>();
                             }
-                            else lstRole = new List<string>();
                         }
+                        else lstRole = new List<string>();
                     }
-                    else lstRole = new List<string>();             
                 }
-            }
-            else lstRole = new List<string>();
-            
-            var userRight = await _context.T_AD_USER_RIGHT.Where(x => x.USER_NAME == isvalidUsername).ToListAsync();
-            if (userRight.Count > 0)
-            {
-                foreach (var right in userRight)
+                else lstRole = new List<string>();
+
+                var userRight = await _context.T_AD_USER_RIGHT.Where(x => x.USER_NAME == isvalidUsername).ToListAsync();
+                if (userRight.Count > 0)
                 {
-                    if (right.IS_ADD == "Y" && right.IS_REMOVE == "N") lstRole.Add(right.FK_RIGHT);                  
-                    else if (right.IS_ADD == "N" && right.IS_REMOVE == "Y") lstRole.Remove(right.FK_RIGHT);                   
+                    foreach (var right in userRight)
+                    {
+                        if (right.IS_ADD == true && right.IS_REMOVE == false) lstRole.Add(right.FK_RIGHT);
+                        else if (right.IS_ADD == false && right.IS_REMOVE == true) lstRole.Remove(right.FK_RIGHT);
+                    }
                 }
+
+                return lstRole;
+            }
+            catch (Exception ex)
+            {
+                Status = false;
+                Exception = ex;
+                return null;
             }
 
-            return lstRole;
         }
 
         public async Task<UserFilter> Search(UserFilter page)

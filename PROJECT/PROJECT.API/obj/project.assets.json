@@ -2159,16 +2159,6 @@
           "bin/placeholder/PROJECT.Core.dll": {}
         }
       },
-      "PROJECT.Domain/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "compile": {
-          "bin/placeholder/PROJECT.Domain.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/PROJECT.Domain.dll": {}
-        }
-      },
       "PROJECT.Service/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -6235,11 +6225,6 @@
       "path": "../PROJECT.Core/PROJECT.Core.csproj",
       "msbuildProject": "../PROJECT.Core/PROJECT.Core.csproj"
     },
-    "PROJECT.Domain/1.0.0": {
-      "type": "project",
-      "path": "../PROJECT.API.DOMAIN/PROJECT.Domain.csproj",
-      "msbuildProject": "../PROJECT.API.DOMAIN/PROJECT.Domain.csproj"
-    },
     "PROJECT.Service/1.0.0": {
       "type": "project",
       "path": "../PROJECT.Service/PROJECT.Service.csproj",
@@ -6259,13 +6244,11 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.5",
       "Newtonsoft.Json >= 13.0.3",
       "PROJECT.Core >= 1.0.0",
-      "PROJECT.Domain >= 1.0.0",
       "PROJECT.Service >= 1.0.0",
       "Spire.Doc >= 11.4.0",
       "Swashbuckle.AspNetCore >= 6.2.3",
       "System.IdentityModel.Tokens.Jwt >= 6.29.0",
-      "UAParser >= 3.1.47",
-      "XAct.Core.PCL >= 0.0.5014"
+      "UAParser >= 3.1.47"
     ]
   },
   "packageFolders": {
@@ -6274,11 +6257,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\D2S Project\\iCMS\\iCMS\\PROJECT\\PROJECT.API\\PROJECT.API.csproj",
+      "projectUniqueName": "C:\\Users\\LONGD2S\\Desktop\\SMO\\PROJECT\\PROJECT.API\\PROJECT.API.csproj",
       "projectName": "PROJECT.API",
-      "projectPath": "D:\\D2S Project\\iCMS\\iCMS\\PROJECT\\PROJECT.API\\PROJECT.API.csproj",
+      "projectPath": "C:\\Users\\LONGD2S\\Desktop\\SMO\\PROJECT\\PROJECT.API\\PROJECT.API.csproj",
       "packagesPath": "C:\\Users\\LONGD2S\\.nuget\\packages\\",
-      "outputPath": "D:\\D2S Project\\iCMS\\iCMS\\PROJECT\\PROJECT.API\\obj\\",
+      "outputPath": "C:\\Users\\LONGD2S\\Desktop\\SMO\\PROJECT\\PROJECT.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\LONGD2S\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6295,14 +6278,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\D2S Project\\iCMS\\iCMS\\PROJECT\\PROJECT.API.DOMAIN\\PROJECT.Domain.csproj": {
-              "projectPath": "D:\\D2S Project\\iCMS\\iCMS\\PROJECT\\PROJECT.API.DOMAIN\\PROJECT.Domain.csproj"
+            "C:\\Users\\LONGD2S\\Desktop\\SMO\\PROJECT\\PROJECT.Core\\PROJECT.Core.csproj": {
+              "projectPath": "C:\\Users\\LONGD2S\\Desktop\\SMO\\PROJECT\\PROJECT.Core\\PROJECT.Core.csproj"
             },
-            "D:\\D2S Project\\iCMS\\iCMS\\PROJECT\\PROJECT.Core\\PROJECT.Core.csproj": {
-              "projectPath": "D:\\D2S Project\\iCMS\\iCMS\\PROJECT\\PROJECT.Core\\PROJECT.Core.csproj"
-            },
-            "D:\\D2S Project\\iCMS\\iCMS\\PROJECT\\PROJECT.Service\\PROJECT.Service.csproj": {
-              "projectPath": "D:\\D2S Project\\iCMS\\iCMS\\PROJECT\\PROJECT.Service\\PROJECT.Service.csproj"
+            "C:\\Users\\LONGD2S\\Desktop\\SMO\\PROJECT\\PROJECT.Service\\PROJECT.Service.csproj": {
+              "projectPath": "C:\\Users\\LONGD2S\\Desktop\\SMO\\PROJECT\\PROJECT.Service\\PROJECT.Service.csproj"
             }
           }
         }
@@ -6372,10 +6352,6 @@
           "UAParser": {
             "target": "Package",
             "version": "[3.1.47, )"
-          },
-          "XAct.Core.PCL": {
-            "target": "Package",
-            "version": "[0.0.5014, )"
           }
         },
         "imports": [

@@ -7,7 +7,7 @@ namespace PROJECT.Core.Models.MD
     {
         [Key]
         public string CODE { get; set; }
-        public string NAME { get; set; }
-        public string SKF { get; set; }
+        public string TEXT { get; set; }
+        public bool ACTIVE { get; set; }
     }
 }

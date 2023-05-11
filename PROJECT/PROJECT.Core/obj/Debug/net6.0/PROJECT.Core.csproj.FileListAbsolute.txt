@@ -10,3 +10,15 @@ D:\D2S Project\iCMS\iCMS\PROJECT\PROJECT.Core\obj\Debug\net6.0\PROJECT.Core.dll
 D:\D2S Project\iCMS\iCMS\PROJECT\PROJECT.Core\obj\Debug\net6.0\refint\PROJECT.Core.dll
 D:\D2S Project\iCMS\iCMS\PROJECT\PROJECT.Core\obj\Debug\net6.0\PROJECT.Core.pdb
 D:\D2S Project\iCMS\iCMS\PROJECT\PROJECT.Core\obj\Debug\net6.0\ref\PROJECT.Core.dll
+C:\Users\LONGD2S\Desktop\SMO\PROJECT\PROJECT.Core\bin\Debug\net6.0\PROJECT.Core.deps.json
+C:\Users\LONGD2S\Desktop\SMO\PROJECT\PROJECT.Core\bin\Debug\net6.0\PROJECT.Core.dll
+C:\Users\LONGD2S\Desktop\SMO\PROJECT\PROJECT.Core\bin\Debug\net6.0\PROJECT.Core.pdb
+C:\Users\LONGD2S\Desktop\SMO\PROJECT\PROJECT.Core\obj\Debug\net6.0\PROJECT.Core.csproj.AssemblyReference.cache
+C:\Users\LONGD2S\Desktop\SMO\PROJECT\PROJECT.Core\obj\Debug\net6.0\PROJECT.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LONGD2S\Desktop\SMO\PROJECT\PROJECT.Core\obj\Debug\net6.0\PROJECT.Core.AssemblyInfoInputs.cache
+C:\Users\LONGD2S\Desktop\SMO\PROJECT\PROJECT.Core\obj\Debug\net6.0\PROJECT.Core.AssemblyInfo.cs
+C:\Users\LONGD2S\Desktop\SMO\PROJECT\PROJECT.Core\obj\Debug\net6.0\PROJECT.Core.csproj.CoreCompileInputs.cache
+C:\Users\LONGD2S\Desktop\SMO\PROJECT\PROJECT.Core\obj\Debug\net6.0\PROJECT.Core.dll
+C:\Users\LONGD2S\Desktop\SMO\PROJECT\PROJECT.Core\obj\Debug\net6.0\refint\PROJECT.Core.dll
+C:\Users\LONGD2S\Desktop\SMO\PROJECT\PROJECT.Core\obj\Debug\net6.0\PROJECT.Core.pdb
+C:\Users\LONGD2S\Desktop\SMO\PROJECT\PROJECT.Core\obj\Debug\net6.0\ref\PROJECT.Core.dll

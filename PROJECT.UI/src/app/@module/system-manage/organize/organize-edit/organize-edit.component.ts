@@ -10,13 +10,23 @@ import { OrganizeService } from 'src/app/services/AD/organize.service';
 export class OrganizeEditComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, private _service: OrganizeService) { }
   itemDetail: T_AD_ORGANIZE = {
-    PKID: '',
     COMPANY_CODE: '',
-    PARENT: '',
+    PARENT_CODE: '',
     NAME: '',
     TYPE: '',
     C_ORDER: 0,
-    COST_CENTER_CODE: '',
+    PLANT_CODE: '',
+    EMAIL: '',
+    PHONE: '',
+    PROJECT: '',
+    IS_SEND_TO_SAP_IMMEDIATE: false,
+    IS_DCNB_AFTER: false,
+    IS_DCNB_BEFORE: false,
+    USER_EGAS: '',
+    PASS_EGAS: '',
+    LUONG_CANH_BAO: 0,
+    IS_CANH_BAO_GAN_NGAN: false,
+    LUONG_TON_KHO_MIN: 0,
     CREATE_BY: '',
     CREATE_DATE: new Date(),
     UPDATE_BY: '',
@@ -25,7 +35,6 @@ export class OrganizeEditComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe({
       next: (params) => {
-        console.log(params)
         const id = params.get('code');
         if (id) {
           this._service.getDetailOrganize(id)

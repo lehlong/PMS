@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
     this.hubConnection
     .start()
     .then(()=>{
-      console.log("Connection started!")
+      //console.log("Connection started!")
     })
     .catch(err =>{
       console.log(err)

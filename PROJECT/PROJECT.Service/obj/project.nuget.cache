@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uYQiRjQW52QH5W9ZRnx1LboAbY7Su3AiS9pM/E1M0ne3vaDexi6bUTXv94Li5tc6QYhP4YJy7NoSEWsWwDXnYw==",
+  "dgSpecHash": "Q63spjlR+LqzHxtSwM8/PHHm84g2FZf8kjYCfazRSm77BS94GhHds8f87/j+X0Iqw2bbHdf6RLe42MeT+JOR9A==",
   "success": true,
-  "projectFilePath": "D:\\D2S Project\\iCMS\\iCMS\\PROJECT\\PROJECT.Service\\PROJECT.Service.csproj",
+  "projectFilePath": "C:\\Users\\LONGD2S\\Desktop\\SMO\\PROJECT\\PROJECT.Service\\PROJECT.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LONGD2S\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\LONGD2S\\.nuget\\packages\\automapper.extensions.expressionmapping\\6.0.4\\automapper.extensions.expressionmapping.6.0.4.nupkg.sha512",

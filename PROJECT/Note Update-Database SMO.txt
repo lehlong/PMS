@@ -1,5 +1,6 @@
-1. Thêm PKID (uniqueidentifer) vào T_AD_USER_USER_GROUP
-2. Update random T_AD_USER_USER_GROUP.PKID
-3. Thêm PKID (uniqueidentifer) vào T_AD_USER_RIGHT
-4. Update random T_AD_USER_RIGHT.PKID
-5. Cập nhật icon, link,... T_AD_MENU
+1. Thêm PKID (uniqueidentifer) vào T_AD_USER_USER_GROUP - random PKID
+2. Thêm PKID (uniqueidentifer) vào T_AD_USER_RIGHT - random PKID
+3. Cập nhật icon, link,... T_AD_MENU
+4. Tạo thêm bảng T_AD_LANGUAGE_TRANSLATE
+5. Sửa kiểu dữ liệu char(1) => bit của các bảng: T_AD_ORGANIZE, T_AD_USER,...
+6. Update lại bảng T_AD_MESSAGE

@@ -51,15 +51,31 @@ namespace PROJECT.Service.Commons
         }
         public virtual async Task<MessageObject> GetMessage(string code, string lang)
         {
-            var mess = await _context.T_AD_MESSAGE.FirstOrDefaultAsync(x => x.CODE == code && x.LANGUAGE == lang);
-            var messageObject = new MessageObject()
+            try
             {
-                Code = mess.CODE,
-                Message = mess.MESSAGE,
-                MessageDetail = mess.MESSAGE_DETAIL,
-                MessageType = mess.TYPE
-            };
-            return messageObject;
+                var mess = await _context.T_AD_MESSAGE.FirstOrDefaultAsync(x => x.CODE == code && x.LANGUAGE == lang);
+                var messageObject = new MessageObject()
+                {
+                    Code = mess.CODE,
+                    Message = mess.MESSAGE,
+                    MessageDetail = mess.MESSAGE_DETAIL,
+                    MessageType = mess.TYPE
+                };
+                return messageObject;
+            }
+            catch(Exception ex)
+            {
+                var messageObject = new MessageObject()
+                {
+                    Code = "ERROR",
+                    Message = "Đã có lỗi xảy ra",
+                    MessageDetail = ex.Message,
+                    MessageType = "E"
+                };
+                return messageObject;
+            }
+
+
         }
     }
 }

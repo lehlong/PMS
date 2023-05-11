@@ -39,8 +39,6 @@ export class UserListComponent implements OnInit {
     } else {
       this.filter.KeySearch = "Empty"
     }
-
-    console.log(this.filter.KeySearch)
     this._service.getListUser(this.filter)
       .subscribe({
         next: (response) => {

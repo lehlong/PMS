@@ -10,6 +10,6 @@ namespace PROJECT.Core.Models.AD
         public string NAME { get; set; }
         public string PARENT { get; set; }
         public int C_ORDER { get; set; }
-
+        public bool? IS_USE_FOR_GROUP { get; set; }
     }
 }

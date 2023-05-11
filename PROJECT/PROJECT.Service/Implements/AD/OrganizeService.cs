@@ -28,8 +28,8 @@ namespace PROJECT.Service.Implements.AD
             {
                 var node = new NodeOrganize()
                 {
-                    id = item.PKID,
-                    pId = item.PARENT,
+                    id = item.COMPANY_CODE,
+                    pId = item.PARENT_CODE,
                     name = item.NAME
                 };
                 lstNode.Add(node);
@@ -37,21 +37,20 @@ namespace PROJECT.Service.Implements.AD
             return lstNode;
         }
 
-        public async Task UpdateOrder(string request)
+        public async Task UpdateOrder(List<NodeOrganize> request)
         {
             try
             {
-                var jsonData = JsonConvert.DeserializeObject<NodeOrganize[]>(request);
-                for (var i = 0; i < jsonData.Length; i++)
+                for (var i = 0; i < request.Count; i++)
                 {
-                    var item = await _context.T_AD_ORGANIZE.FirstOrDefaultAsync(x => x.PKID == jsonData[i].id);
+                    var item = await _context.T_AD_ORGANIZE.FirstOrDefaultAsync(x => x.COMPANY_CODE == request[i].id);
                     if (item == null)
                     {
                         continue;
                     }
                     else
                     {
-                        item.PARENT = jsonData[i].pId;
+                        item.PARENT_CODE = request[i].pId;
                         item.C_ORDER = i;
                     }
                 }
@@ -64,9 +63,9 @@ namespace PROJECT.Service.Implements.AD
             }
 
         }
-        public async Task<T_AD_ORGANIZE> GetDetail(string pkid)
+        public async Task<T_AD_ORGANIZE> GetDetail(string code)
         {
-            return await _context.T_AD_ORGANIZE.FirstOrDefaultAsync(x => x.PKID == pkid);   
+            return await _context.T_AD_ORGANIZE.FirstOrDefaultAsync(x => x.COMPANY_CODE == code);   
         }
 
         public async Task<TranferObject> Update(T_AD_ORGANIZE request)
@@ -104,7 +103,7 @@ namespace PROJECT.Service.Implements.AD
         {
             try
             {
-                request.PKID = Guid.NewGuid().ToString();
+                request.PARENT_CODE = "0000";
                 request.C_ORDER = 0;
                 await _context.T_AD_ORGANIZE.AddAsync(request);
                 await _context.SaveChangesAsync();

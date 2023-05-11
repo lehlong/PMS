@@ -27,7 +27,7 @@ export class CommonService {
 
     getRequest(url: string): Observable<TranferObject> {
         ShowLoading();
-        var tranferObject = this.http.get<TranferObject>(this.apiUrl + url, this.requestOptions)
+        var tranferObject = this.http.get<TranferObject>(this.apiUrl + url, this.requestOptions).pipe(share())
         tranferObject.subscribe({
             next: (response) => { 
                 HideLoading();
@@ -36,6 +36,19 @@ export class CommonService {
                 }
              },
             error: (response) => { HideLoading(); }
+        })
+        return tranferObject;
+    }
+
+    getRequestWithoutLoading(url: string): Observable<TranferObject> {
+        var tranferObject = this.http.get<TranferObject>(this.apiUrl + url, this.requestOptions).pipe(share())
+        tranferObject.subscribe({
+            next: (response) => { 
+                if(response.Message?.MessageType == "E"){
+                    Message(response);
+                }
+             },
+            error: (response) => { }
         })
         return tranferObject;
     }
@@ -50,10 +63,18 @@ export class CommonService {
         HideLoading();
         return tranferObject;
     }
+    postRequestWithoutLoading(url: string, request :any): Observable<TranferObject>{
+        var tranferObject = this.http.post<TranferObject>(this.apiUrl + url, request, this.requestOptions).pipe(share())
+        tranferObject.subscribe({
+            next: (response) => { Message(response) },
+            error: (response) => { Message(response)}
+        })
+        return tranferObject;
+    }
 
     putRequest(url: string, request :any): Observable<TranferObject>{
         ShowLoading();
-        var tranferObject = this.http.put<TranferObject>(this.apiUrl + url, request, this.requestOptions)
+        var tranferObject = this.http.put<TranferObject>(this.apiUrl + url, request, this.requestOptions).pipe(share())
         tranferObject.subscribe({
             next: (response) => { Message(response) },
             error: (response) => { Message(response)}
@@ -62,14 +83,41 @@ export class CommonService {
         return tranferObject;
     }
 
+    putRequestWithoutLoading(url: string, request :any): Observable<TranferObject>{
+        var tranferObject = this.http.put<TranferObject>(this.apiUrl + url, request, this.requestOptions).pipe(share())
+        tranferObject.subscribe({
+            next: (response) => { Message(response) },
+            error: (response) => { Message(response)}
+        })
+        return tranferObject;
+    }
+
+    putRequestWithoutMessage(url: string, request :any): Observable<TranferObject>{
+        var tranferObject = this.http.put<TranferObject>(this.apiUrl + url, request, this.requestOptions).pipe(share())
+        tranferObject.subscribe({
+            next: (response) => { },
+            error: (response) => { console.log(response)}
+        })
+        return tranferObject;
+    }
+
     deleteRequest(url: string): Observable<TranferObject>{
         ShowLoading();
-        var tranferObject = this.http.delete<TranferObject>(this.apiUrl + url, this.requestOptions)
+        var tranferObject = this.http.delete<TranferObject>(this.apiUrl + url, this.requestOptions).pipe(share())
         tranferObject.subscribe({
             next: (response) => { Message(response) },
             error: (response) => { Message(response)}
         })
         HideLoading();
+        return tranferObject;
+    }
+
+    deleteRequestWithoutLoading(url: string): Observable<TranferObject>{
+        var tranferObject = this.http.delete<TranferObject>(this.apiUrl + url, this.requestOptions).pipe(share())
+        tranferObject.subscribe({
+            next: (response) => { Message(response) },
+            error: (response) => { Message(response)}
+        })
         return tranferObject;
     }
 }

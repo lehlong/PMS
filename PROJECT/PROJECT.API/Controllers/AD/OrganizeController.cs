@@ -5,6 +5,7 @@ using PROJECT.Core.Models.AD;
 using PROJECT.Service.Extention;
 using PROJECT.Service.Interfaces.AD;
 using System.Net;
+using static PROJECT.Service.Extention.NodeTree;
 
 namespace PROJECT.API.Controllers.MD
 {
@@ -46,8 +47,8 @@ namespace PROJECT.API.Controllers.MD
         }
 
         [HttpPut]
-        [Route("UpdateOrder/{request}")]
-        public async Task<IActionResult> updateOrder([FromRoute] string request)
+        [Route("UpdateOrder")]
+        public async Task<IActionResult> updateOrder([FromBody] List<NodeOrganize> request)
         {
             var tranferObject = new TranferObject();
             await _service.UpdateOrder(request);

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "V2YxCIQTRt+Fu84MMj4iizlOBjHtXfWsHTRdli3apW5nHFpJinfJNycGwlXDwYLPM82GpdCasGRLuEMCUffNUg==",
+  "dgSpecHash": "55ytaihiMX9mxgsO/NRl2HwVJptJYErTfzKS6sECUYgnpByXMhX3epIlQx+LDqgxlC7CERiYU0cu35oI2eKFTA==",
   "success": true,
-  "projectFilePath": "D:\\D2S Project\\iCMS\\iCMS\\PROJECT\\PROJECT.Core\\PROJECT.Core.csproj",
+  "projectFilePath": "C:\\Users\\LONGD2S\\Desktop\\SMO\\PROJECT\\PROJECT.Core\\PROJECT.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LONGD2S\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\LONGD2S\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",

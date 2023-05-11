@@ -23,7 +23,7 @@ namespace PROJECT.API.Controllers.AD
         public async Task<IActionResult> Search([FromQuery] OnChangeDate date)
         {
             var tranferObject = new TranferObject();
-            var data = await _service._context.T_AD_HISTORY_LOGIN.Where(x => x.LOGIN_TIME >= DateTime.Parse(date.startDate) && x.LOGIN_TIME <= DateTime.Parse(date.finishDate).AddDays(1).AddTicks(-1)).ToListAsync();
+            var data = await _service._context.T_AD_USER_HISTORY.Where(x => x.LOGON_TIME >= DateTime.Parse(date.startDate) && x.LOGON_TIME <= DateTime.Parse(date.finishDate).AddDays(1).AddTicks(-1)).ToListAsync();
             if (_service.Status)
             {
                 tranferObject.Data = data;

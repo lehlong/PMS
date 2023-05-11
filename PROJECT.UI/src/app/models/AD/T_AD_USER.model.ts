@@ -1,4 +1,3 @@
-import { T_MD_TITLE } from "../MD/T_MD_TITLE.model";
 import { T_AD_ORGANIZE } from "./T_AD_ORGANIZE.model";
 
 export interface T_AD_USER{
