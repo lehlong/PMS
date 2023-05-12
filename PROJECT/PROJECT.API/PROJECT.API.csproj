@@ -32,8 +32,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="Controllers\MD\DischardController.cs" />
+    <Compile Include="Controllers\MD\MaterialController.cs" />
+    <Compile Include="Controllers\MD\PlantController.cs" />
     <Compile Include="Controllers\MD\SaleOfficeController.cs" />
+    <Compile Include="Controllers\MD\TransmodeController.cs" />
     <Compile Include="Controllers\MD\UnitController.cs" />
+    <Compile Include="Controllers\MD\VehicleController.cs" />
+    <Compile Include="Controllers\MD\VendorController.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -45,6 +51,7 @@
     <PackageReference Include="JWT" Version="10.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.16" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="7.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Spire.Doc" Version="11.4.0" />

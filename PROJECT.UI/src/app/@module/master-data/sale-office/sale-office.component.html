@@ -28,9 +28,9 @@
                                 <th scope="col">Mã </th>
                                 <th scope="col">Tên</th>
                                 <th scope="col">Đơn vị</th>
-                                <th scope="col" style="width: 16%;">Mã điểm đổ hàng</th>
-                                <th scope="col" style="width: 16%;">Email</th>
-                                <th scope="col" style="width: 16%;">Số điện thoại</th>
+                                <th scope="col" style="width: 16%;"><i class="bi bi-pencil-square"></i> Mã điểm đổ hàng</th>
+                                <th scope="col" style="width: 16%;"><i class="bi bi-pencil-square"></i> Email</th>
+                                <th scope="col" style="width: 16%;"><i class="bi bi-pencil-square"></i> Số điện thoại</th>
                                 <th scope="col" style="width: 60px;"></th>
         
                             </tr>
@@ -41,9 +41,9 @@
                                 <td>{{item.CODE}}</td>
                                 <td>{{item.TEXT}}</td>
                                 <td>{{item.COMPANY_CODE}} - {{getNameCompany(item.COMPANY_CODE)}}</td>
-                                <td><input type="text" class="form-control" name="DISCHARD_POINT" [(ngModel)]="item.DISCHARD_POINT" (blur)="updateSaleOffice(item)"></td>
-                                <td><input type="text" class="form-control" name="EMAIL" [(ngModel)]="item.EMAIL" (blur)="updateSaleOffice(item)"></td>
-                                <td><input type="text" class="form-control" name="PHONE" [(ngModel)]="item.PHONE" (blur)="updateSaleOffice(item)"></td>
+                                <td><input type="text" name="DISCHARD_POINT" [(ngModel)]="item.DISCHARD_POINT" (blur)="updateSaleOffice(item)"></td>
+                                <td><input type="text" name="EMAIL" [(ngModel)]="item.EMAIL" (blur)="updateSaleOffice(item)"></td>
+                                <td><input type="text" name="PHONE" [(ngModel)]="item.PHONE" (blur)="updateSaleOffice(item)"></td>
                                 <td>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" name="ACTIVE" [(ngModel)]="item.ACTIVE" (change)="updateSaleOffice(item)">

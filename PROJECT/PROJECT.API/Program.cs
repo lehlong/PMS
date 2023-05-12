@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Http.Features;
 using PROJECT.API.Hubs;
 using PROJECT.Core;
 using PROJECT.Service;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -47,6 +49,7 @@ builder.Services.AddSwaggerGen(options => {
 builder.Services.Configure<JsonOptions>(options =>
 {
     options.JsonSerializerOptions.PropertyNamingPolicy = null;
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
 });
 
 builder.Services.AddAuthentication(opt => {

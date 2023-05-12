@@ -103,3 +103,15 @@
 .ng-select .ng-select-container {
     border-radius: 2px !important;
 }
+
+td > input {
+    outline: 0 !important;
+    width: 100%;
+    border: none !important;
+    padding: 0 !important;
+    background: rgba(0, 0, 0, 0.001) !important;
+}
+
+th i {
+    font-size: 14px !important;
+}
