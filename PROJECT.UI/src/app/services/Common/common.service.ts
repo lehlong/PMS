@@ -37,8 +37,7 @@ export class CommonService {
 
         var tranferObject = this.http.post<TranferObject>(this.apiUrl + url, request).pipe(share())
         tranferObject.subscribe({
-            next: (response) => { Message(response) },
-            error: (response) => { Message(response) }
+            next: (response) => { Message(response) }
         })
         HideLoading();
         return tranferObject;
@@ -48,8 +47,7 @@ export class CommonService {
         if (isLoading) ShowLoading();
         var tranferObject = this.http.put<TranferObject>(this.apiUrl + url, request).pipe(share())
         tranferObject.subscribe({
-            next: (response) => { if (isMessage) Message(response) },
-            error: (response) => { if (isMessage) Message(response) }
+            next: (response) => { if (isMessage) Message(response) }
         })
         HideLoading();
         return tranferObject;
@@ -60,7 +58,6 @@ export class CommonService {
         var tranferObject = this.http.delete<TranferObject>(this.apiUrl + url).pipe(share())
         tranferObject.subscribe({
             next: (response) => { Message(response) },
-            error: (response) => { Message(response) }
         })
         HideLoading();
         return tranferObject;
