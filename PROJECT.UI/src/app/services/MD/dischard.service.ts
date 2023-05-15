@@ -9,11 +9,11 @@ import { T_MD_DISCHARD } from 'src/app/models/MD/T_MD_DISCHARD.model';
 export class DischardService {
   constructor(private _commonService : CommonService) { }
   
-  searchDischard(pagination? : DischardFilter){
-    return this._commonService.getRequest(`/api/Dischard/GetList`,pagination)
+  searchDischard(pagination? : DischardFilter, isLoading?:boolean){
+    return this._commonService.getRequest(`/api/Dischard/GetList`,pagination, isLoading)
   }
 
   updateDischard(request : T_MD_DISCHARD){
-    return this._commonService.putRequestWithoutMessage(`/api/Dischard/Update`, request)
+    return this._commonService.putRequest(`/api/Dischard/Update`, request)
   }
 }

@@ -3,7 +3,7 @@ export interface BaseFilter {
     TotalPage: number;
     ItemCount: number;
     PageSize: number;
-    KeySearch:string;
+    KeySearch:any;
     IsLoading: boolean;
     Data: object;
 }

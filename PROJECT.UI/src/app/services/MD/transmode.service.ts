@@ -9,11 +9,11 @@ import { T_MD_TRANSMODE } from 'src/app/models/MD/T_MD_TRANSMODE.model';
 export class TransmodeService {
   constructor(private _commonService : CommonService) { }
 
-  searchTransmode(pagination? : TransmodeFilter){
-    return this._commonService.getRequest(`/api/Transmode/GetList`, pagination)
+  searchTransmode(pagination? : TransmodeFilter, isLoading?: boolean){
+    return this._commonService.getRequest(`/api/Transmode/GetList`, pagination, isLoading)
   }
 
   updateTransmode(request : T_MD_TRANSMODE){
-    return this._commonService.putRequestWithoutMessage(`/api/Transmode/Update`, request)
+    return this._commonService.putRequest(`/api/Transmode/Update`, request)
   }
 }

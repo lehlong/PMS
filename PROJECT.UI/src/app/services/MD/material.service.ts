@@ -9,11 +9,11 @@ import { T_MD_MATERIAL } from 'src/app/models/MD/T_MD_MATERIAL.model';
 export class MaterialService {
   constructor(private _commonService : CommonService) { }
   
-  searchMaterial(pagination? : MaterialFilter){
-    return this._commonService.getRequest(`/api/Material/GetList`, pagination)
+  searchMaterial(pagination? : MaterialFilter, isLoading?: boolean){
+    return this._commonService.getRequest(`/api/Material/GetList`, pagination, isLoading)
   }
 
   updateMaterial(request : T_MD_MATERIAL){
-    return this._commonService.putRequestWithoutMessage(`/api/Material/Update`, request)
+    return this._commonService.putRequest(`/api/Material/Update`, request)
   }
 }

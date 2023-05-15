@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -14,11 +14,14 @@ import { NgCacheRouteReuseModule } from 'ng-cache-route-reuse';
 import { JwtModule } from '@auth0/angular-jwt';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxDocViewerModule } from 'ngx-doc-viewer';
-import { components } from './app.index';
+import { LoginComponent } from './authentication/login/login.component';
+import * as jQuery from 'jquery';
+import { HeaderInterceptor } from './services/Common/header-interceptor.service';
  
 @NgModule({
   declarations: [
-    components
+    AppComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,14 @@ import { components } from './app.index';
       cookieAttributes: 'SameSite=Strict; Secure' // no default, optional specification of additional attributes.
     })
   ],
-  providers: [CookieService],
+  providers: [
+    CookieService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HeaderInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

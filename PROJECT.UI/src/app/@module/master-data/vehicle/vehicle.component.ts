@@ -17,11 +17,11 @@ export class VehicleComponent implements OnInit {
     ItemCount: 0,
     PageSize: 15,
     IsLoading: true,
-    KeySearch: 'Empty',
+    KeySearch: '',
     Data: []
   }
   ngOnInit(): void {
-    this._service.searchVehicle(this.filter)
+    this._service.searchVehicle(this.filter, true)
       .subscribe({
         next: (response) => {
           this.listVehicle = response.Data.Data;
@@ -32,11 +32,7 @@ export class VehicleComponent implements OnInit {
   }
   searchVehicle(event: any) {
     this.filter.CurrentPage = 1;
-    if (event.target.value) {
-      this.filter.KeySearch = event.target.value;
-    } else {
-      this.filter.KeySearch = "Empty"
-    }
+    this.filter.KeySearch = event.target.value;
     this._service.searchVehicle(this.filter)
       .subscribe({
         next: (response) => {

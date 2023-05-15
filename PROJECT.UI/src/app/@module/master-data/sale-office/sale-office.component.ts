@@ -22,8 +22,8 @@ export class SaleOfficeComponent implements OnInit {
     ItemCount: 0,
     PageSize: 15,
     IsLoading: true,
-    KeySearch: 'Empty',
-    Organize:'Empty',
+    KeySearch: "",
+    Organize: "",
     Data: []
   }
 
@@ -42,7 +42,7 @@ export class SaleOfficeComponent implements OnInit {
         },
         error: (response) => { console.log(response); }
       });
-      this._service.searchSaleOffice(this.filter)
+      this._service.searchSaleOffice(this.filter, true)
       .subscribe({
         next: (response) => {
           this.listSaleOffice = response.Data.Data;
@@ -82,11 +82,7 @@ export class SaleOfficeComponent implements OnInit {
 
   searchSaleOffice(event: any) {
     this.filter.CurrentPage = 1;
-    if (event.target.value) {
-      this.filter.KeySearch = event.target.value;
-    } else {
-      this.filter.KeySearch = "Empty"
-    }
+    this.filter.KeySearch = event.target.value;
     this.searchSaleOfficeCommon(this.filter)
   }
   onChangePage(event: any) {

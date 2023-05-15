@@ -8,7 +8,7 @@ import { PlantFilter } from 'src/app/@filter/MD/plant-filter.model';
 export class PlantService {
   constructor(private _commonService : CommonService) { }
   
-  searchPlant(pagination? : PlantFilter){
-    return this._commonService.getRequest(`/api/Plant/GetList`, pagination)
+  searchPlant(pagination? : PlantFilter, isLoading?: boolean){
+    return this._commonService.getRequest(`/api/Plant/GetList`, pagination, isLoading)
   }
 }

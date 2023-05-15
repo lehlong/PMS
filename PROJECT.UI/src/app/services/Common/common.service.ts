@@ -13,58 +13,29 @@ declare function Message(response: TranferObject): any
 })
 export class CommonService {
 
-    token = localStorage.getItem('jwt');
-    headers = new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${this.token}`,
-        'Language': `${localStorage.getItem('lang')}`
-    });
-    requestOptions = { headers: this.headers };
-
     apiUrl: string = environment.baseApiUrl;
 
     constructor(private http: HttpClient) { }
 
-    getRequest(url: string, params?: any): Observable<TranferObject> {
-        debugger
-        if (params && params.IsLoading) {
-            ShowLoading();
-        }
-        var tranferObject = this.http.get<TranferObject>(this.apiUrl + url, { headers: this.headers, params: params }).pipe(share())
+    getRequest(url: string, params?: any, isLoading?: boolean): Observable<TranferObject> {
+        if (isLoading) ShowLoading();
+        
+        var tranferObject = this.http.get<TranferObject>(this.apiUrl + url, { params: params }).pipe(share())
         tranferObject.subscribe({
             next: (response) => {
                 HideLoading();
                 if (response.Message?.MessageType == "E") {
                     Message(response);
                 }
-            },
-            error: (response) => { HideLoading(); }
+            }
         })
         return tranferObject;
     }
 
-    postRequest(url: string, request: any): Observable<TranferObject> {
-        ShowLoading();
-        var tranferObject = this.http.post<TranferObject>(this.apiUrl + url, request, this.requestOptions).pipe(share())
-        tranferObject.subscribe({
-            next: (response) => { Message(response) },
-            error: (response) => { Message(response) }
-        })
-        HideLoading();
-        return tranferObject;
-    }
-    postRequestWithoutLoading(url: string, request: any): Observable<TranferObject> {
-        var tranferObject = this.http.post<TranferObject>(this.apiUrl + url, request, this.requestOptions).pipe(share())
-        tranferObject.subscribe({
-            next: (response) => { Message(response) },
-            error: (response) => { Message(response) }
-        })
-        return tranferObject;
-    }
+    postRequest(url: string, request: any, isLoading?: boolean): Observable<TranferObject> {
+        if (isLoading) ShowLoading();
 
-    putRequest(url: string, request: any): Observable<TranferObject> {
-        ShowLoading();
-        var tranferObject = this.http.put<TranferObject>(this.apiUrl + url, request, this.requestOptions).pipe(share())
+        var tranferObject = this.http.post<TranferObject>(this.apiUrl + url, request).pipe(share())
         tranferObject.subscribe({
             next: (response) => { Message(response) },
             error: (response) => { Message(response) }
@@ -73,41 +44,25 @@ export class CommonService {
         return tranferObject;
     }
 
-    putRequestWithoutLoading(url: string, request: any): Observable<TranferObject> {
-        var tranferObject = this.http.put<TranferObject>(this.apiUrl + url, request, this.requestOptions).pipe(share())
+    putRequest(url: string, request: any, isLoading?: boolean, isMessage?: boolean): Observable<TranferObject> {
+        if (isLoading) ShowLoading();
+        var tranferObject = this.http.put<TranferObject>(this.apiUrl + url, request).pipe(share())
         tranferObject.subscribe({
-            next: (response) => { Message(response) },
-            error: (response) => { Message(response) }
-        })
-        return tranferObject;
-    }
-
-    putRequestWithoutMessage(url: string, request: any): Observable<TranferObject> {
-        var tranferObject = this.http.put<TranferObject>(this.apiUrl + url, request, this.requestOptions).pipe(share())
-        tranferObject.subscribe({
-            next: (response) => { },
-            error: (response) => { console.log(response) }
-        })
-        return tranferObject;
-    }
-
-    deleteRequest(url: string): Observable<TranferObject> {
-        ShowLoading();
-        var tranferObject = this.http.delete<TranferObject>(this.apiUrl + url, this.requestOptions).pipe(share())
-        tranferObject.subscribe({
-            next: (response) => { Message(response) },
-            error: (response) => { Message(response) }
+            next: (response) => { if (isMessage) Message(response) },
+            error: (response) => { if (isMessage) Message(response) }
         })
         HideLoading();
         return tranferObject;
     }
 
-    deleteRequestWithoutLoading(url: string): Observable<TranferObject> {
-        var tranferObject = this.http.delete<TranferObject>(this.apiUrl + url, this.requestOptions).pipe(share())
+    deleteRequest(url: string, isLoading?: boolean): Observable<TranferObject> {
+        if (isLoading) ShowLoading();
+        var tranferObject = this.http.delete<TranferObject>(this.apiUrl + url).pipe(share())
         tranferObject.subscribe({
             next: (response) => { Message(response) },
             error: (response) => { Message(response) }
         })
+        HideLoading();
         return tranferObject;
     }
 }

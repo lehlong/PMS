@@ -25,7 +25,7 @@ namespace PROJECT.Service.Implements.MD
         public async Task<UnitFilter> Search(UnitFilter page)
         {
             var query = _context.T_MD_VEHICLE.AsQueryable();
-            if (page.KeySearch != "Empty")
+            if (!String.IsNullOrEmpty(page.KeySearch))
             {
                 query = query.Where(x => x.CODE.Contains(page.KeySearch));
             }

@@ -102,11 +102,11 @@ function updateOrderTree() {
       Language: localStorage.getItem('lang')
     },
     url: `${environment.baseApiUrl}/api/Right/UpdateOrder/${JSON.stringify(data)}`,
-    success: function (response) {
+    success: function (response : any) {
       Message(response);
       HideLoading();
     },
-    error: function (response) {
+    error: function (response : any) {
       Message(response);
       HideLoading();
     }

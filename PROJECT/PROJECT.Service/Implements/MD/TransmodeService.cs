@@ -22,7 +22,7 @@ namespace PROJECT.Service.Implements.MD
         public async Task<TransmodeFilter> Search(TransmodeFilter page)
         {
             var query = _context.T_MD_TRANSMODE.AsQueryable();
-            if (page.KeySearch != "Empty")
+            if (!String.IsNullOrEmpty(page.KeySearch))
             {
                 query = query.Where(x => x.CODE.Contains(page.KeySearch) || x.TEXT.Contains(page.KeySearch));
             }

@@ -22,11 +22,11 @@ namespace PROJECT.Service.Implements.MD
         public async Task<SaleOfficeFilter> Search(SaleOfficeFilter page)
         {
             var query = _context.T_MD_SALEOFFICE.AsQueryable();
-            if (page.KeySearch != "Empty")
+            if (!String.IsNullOrEmpty(page.KeySearch))
             {
                 query = query.Where(x => x.CODE.Contains(page.KeySearch) || x.TEXT.Contains(page.KeySearch));
             }
-            if (page.Organize != "Empty")
+            if (!String.IsNullOrEmpty(page.Organize))
             {
                 query = query.Where(x => x.COMPANY_CODE == page.Organize);
             }

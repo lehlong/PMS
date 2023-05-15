@@ -14,7 +14,7 @@ export class OrganizeService {
     return this._commonService.getRequest(`/api/Organize/GetDetail?pkid=${pkid}`)
   }
   updateOrganize(request : any){
-    return this._commonService.putRequestWithoutLoading('/api/Organize/Update', request)
+    return this._commonService.putRequest('/api/Organize/Update', request, false, true)
   }
   createOrganize(request : any){
     return this._commonService.postRequest('/api/Organize/Create', request)

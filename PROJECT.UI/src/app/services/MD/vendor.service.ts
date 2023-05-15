@@ -9,11 +9,11 @@ import { T_MD_VENDOR } from 'src/app/models/MD/T_MD_VENDOR.model';
 export class VendorService {
   constructor(private _commonService : CommonService) { }
 
-  searchVendor(pagination? : VendorFilter){
-    return this._commonService.getRequest(`/api/Vendor/GetList`, pagination)
+  searchVendor(pagination? : VendorFilter, isLoading?: boolean){
+    return this._commonService.getRequest(`/api/Vendor/GetList`, pagination, isLoading)
   }
 
   updateVendor(request : T_MD_VENDOR){
-    return this._commonService.putRequestWithoutMessage(`/api/Vendor/Update`, request)
+    return this._commonService.putRequest(`/api/Vendor/Update`, request)
   }
 }

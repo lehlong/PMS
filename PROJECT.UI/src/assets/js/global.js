@@ -31,6 +31,16 @@ function MessageDanger(response){
 </div>`).fadeIn();
 }
 
+function MessageErrorSystem(response){
+  $("#alert-message").empty();
+    $("#alert-message").append(`<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <h4 class="alert-heading"><i class="bi bi-exclamation-octagon me-1"></i> Oppsss! Lỗi hệ thống!</h4>
+  <p> ${response.message}</p>
+  <p> Mã lỗi: ${response.status}</p>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>`).fadeIn();
+}
+
 
 function ShowLoading() {
   $("#overlay.div-loading").fadeIn();
