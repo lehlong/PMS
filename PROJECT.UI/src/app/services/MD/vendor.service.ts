@@ -8,15 +8,9 @@ import { T_MD_VENDOR } from 'src/app/models/MD/T_MD_VENDOR.model';
 })
 export class VendorService {
   constructor(private _commonService : CommonService) { }
-  
-  getListVendor(pagination? : VendorFilter){
-    var url = `/api/Vendor/GetList?CurrentPage=${pagination?.CurrentPage}&PageSize=${pagination?.PageSize}&KeySearch=${pagination?.KeySearch}`
-    return this._commonService.getRequest(url)
-  }
 
   searchVendor(pagination? : VendorFilter){
-    var url = `/api/Vendor/GetList?CurrentPage=${pagination?.CurrentPage}&PageSize=${pagination?.PageSize}&KeySearch=${pagination?.KeySearch}`
-    return this._commonService.getRequestWithoutLoading(url)
+    return this._commonService.getRequest(`/api/Vendor/GetList`, pagination)
   }
 
   updateVendor(request : T_MD_VENDOR){

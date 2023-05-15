@@ -16,11 +16,12 @@ export class TransmodeComponent implements OnInit {
     TotalPage: 0,
     ItemCount: 0,
     PageSize: 15,
+    IsLoading: true,
     KeySearch: 'Empty',
     Data: []
   }
   ngOnInit(): void {
-    this._service.getListTransmode(this.filter)
+    this._service.searchTransmode(this.filter)
       .subscribe({
         next: (response) => {
           this.listTransmode = response.Data.Data;

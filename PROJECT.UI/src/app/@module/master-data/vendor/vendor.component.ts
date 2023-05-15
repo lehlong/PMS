@@ -16,11 +16,12 @@ export class VendorComponent implements OnInit {
     TotalPage: 0,
     ItemCount: 0,
     PageSize: 15,
+    IsLoading: true,
     KeySearch: 'Empty',
     Data: []
   }
   ngOnInit(): void {
-    this._service.getListVendor(this.filter)
+    this._service.searchVendor(this.filter)
       .subscribe({
         next: (response) => {
           this.listVendor = response.Data.Data;

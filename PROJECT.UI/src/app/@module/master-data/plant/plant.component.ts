@@ -16,11 +16,12 @@ export class PlantComponent implements OnInit {
     TotalPage: 0,
     ItemCount: 0,
     PageSize: 15,
+    IsLoading: true,
     KeySearch: 'Empty',
     Data: []
   }
   ngOnInit(): void {
-    this._service.getListPlant(this.filter)
+    this._service.searchPlant(this.filter)
       .subscribe({
         next: (response) => {
           this.listPlant = response.Data.Data;

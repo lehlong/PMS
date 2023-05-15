@@ -17,6 +17,7 @@ export class UserListComponent implements OnInit {
     TotalPage: 0,
     ItemCount: 0,
     PageSize: 15,
+    IsLoading: true,
     KeySearch: 'Empty',
     Data: []
   }

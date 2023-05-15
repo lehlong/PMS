@@ -8,15 +8,9 @@ import { T_MD_SALEOFFICE } from 'src/app/models/MD/T_MD_SALEOFFICE.model';
 })
 export class SaleOfficeService {
   constructor(private _commonService : CommonService) { }
-  
-  getListSaleOffice(pagination? : SaleOfficeFilter){
-    var url = `/api/SaleOffice/GetList?CurrentPage=${pagination?.CurrentPage}&PageSize=${pagination?.PageSize}&KeySearch=${pagination?.KeySearch}&Organize=${pagination?.Organize}`
-    return this._commonService.getRequest(url)
-  }
 
   searchSaleOffice(pagination? : SaleOfficeFilter){
-    var url = `/api/SaleOffice/GetList?CurrentPage=${pagination?.CurrentPage}&PageSize=${pagination?.PageSize}&KeySearch=${pagination?.KeySearch}&Organize=${pagination?.Organize}`
-    return this._commonService.getRequestWithoutLoading(url)
+    return this._commonService.getRequest(`/api/SaleOffice/GetList`, pagination)
   }
 
   updateSaleOffice(request : T_MD_SALEOFFICE){

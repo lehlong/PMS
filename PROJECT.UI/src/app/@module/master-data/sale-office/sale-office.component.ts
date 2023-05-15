@@ -21,6 +21,7 @@ export class SaleOfficeComponent implements OnInit {
     TotalPage: 0,
     ItemCount: 0,
     PageSize: 15,
+    IsLoading: true,
     KeySearch: 'Empty',
     Organize:'Empty',
     Data: []
@@ -41,7 +42,7 @@ export class SaleOfficeComponent implements OnInit {
         },
         error: (response) => { console.log(response); }
       });
-      this._service.getListSaleOffice(this.filter)
+      this._service.searchSaleOffice(this.filter)
       .subscribe({
         next: (response) => {
           this.listSaleOffice = response.Data.Data;

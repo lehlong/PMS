@@ -8,13 +8,7 @@ import { PlantFilter } from 'src/app/@filter/MD/plant-filter.model';
 export class PlantService {
   constructor(private _commonService : CommonService) { }
   
-  getListPlant(pagination? : PlantFilter){
-    var url = `/api/Plant/GetList?CurrentPage=${pagination?.CurrentPage}&PageSize=${pagination?.PageSize}&KeySearch=${pagination?.KeySearch}`
-    return this._commonService.getRequest(url)
-  }
-
   searchPlant(pagination? : PlantFilter){
-    var url = `/api/Plant/GetList?CurrentPage=${pagination?.CurrentPage}&PageSize=${pagination?.PageSize}&KeySearch=${pagination?.KeySearch}`
-    return this._commonService.getRequestWithoutLoading(url)
+    return this._commonService.getRequest(`/api/Plant/GetList`, pagination)
   }
 }

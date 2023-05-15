@@ -9,14 +9,8 @@ import { T_MD_MATERIAL } from 'src/app/models/MD/T_MD_MATERIAL.model';
 export class MaterialService {
   constructor(private _commonService : CommonService) { }
   
-  getListMaterial(pagination? : MaterialFilter){
-    var url = `/api/Material/GetList?CurrentPage=${pagination?.CurrentPage}&PageSize=${pagination?.PageSize}&KeySearch=${pagination?.KeySearch}`
-    return this._commonService.getRequest(url)
-  }
-
   searchMaterial(pagination? : MaterialFilter){
-    var url = `/api/Material/GetList?CurrentPage=${pagination?.CurrentPage}&PageSize=${pagination?.PageSize}&KeySearch=${pagination?.KeySearch}`
-    return this._commonService.getRequestWithoutLoading(url)
+    return this._commonService.getRequest(`/api/Material/GetList`, pagination)
   }
 
   updateMaterial(request : T_MD_MATERIAL){

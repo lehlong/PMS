@@ -9,14 +9,8 @@ import { T_MD_DISCHARD } from 'src/app/models/MD/T_MD_DISCHARD.model';
 export class DischardService {
   constructor(private _commonService : CommonService) { }
   
-  getListDischard(pagination? : DischardFilter){
-    var url = `/api/Dischard/GetList?CurrentPage=${pagination?.CurrentPage}&PageSize=${pagination?.PageSize}&KeySearch=${pagination?.KeySearch}`
-    return this._commonService.getRequest(url)
-  }
-
   searchDischard(pagination? : DischardFilter){
-    var url = `/api/Dischard/GetList?CurrentPage=${pagination?.CurrentPage}&PageSize=${pagination?.PageSize}&KeySearch=${pagination?.KeySearch}`
-    return this._commonService.getRequestWithoutLoading(url)
+    return this._commonService.getRequest(`/api/Dischard/GetList`,pagination)
   }
 
   updateDischard(request : T_MD_DISCHARD){

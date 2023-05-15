@@ -16,11 +16,12 @@ export class VehicleComponent implements OnInit {
     TotalPage: 0,
     ItemCount: 0,
     PageSize: 15,
+    IsLoading: true,
     KeySearch: 'Empty',
     Data: []
   }
   ngOnInit(): void {
-    this._service.getListVehicle(this.filter)
+    this._service.searchVehicle(this.filter)
       .subscribe({
         next: (response) => {
           this.listVehicle = response.Data.Data;

@@ -16,11 +16,12 @@ export class DischardComponent implements OnInit {
     TotalPage: 0,
     ItemCount: 0,
     PageSize: 15,
+    IsLoading: true,
     KeySearch: 'Empty',
     Data: []
   }
   ngOnInit(): void {
-    this._service.getListDischard(this.filter)
+    this._service.searchDischard(this.filter)
       .subscribe({
         next: (response) => {
           this.listDischard = response.Data.Data;

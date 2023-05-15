@@ -9,14 +9,8 @@ import { T_MD_UNIT } from 'src/app/models/MD/T_MD_UNIT.model';
 export class UnitService {
   constructor(private _commonService : CommonService) { }
   
-  getListUnit(pagination? : UnitFilter){
-    var url = `/api/Unit/GetList?CurrentPage=${pagination?.CurrentPage}&PageSize=${pagination?.PageSize}&KeySearch=${pagination?.KeySearch}`
-    return this._commonService.getRequest(url)
-  }
-
   searchUnit(pagination? : UnitFilter){
-    var url = `/api/Unit/GetList?CurrentPage=${pagination?.CurrentPage}&PageSize=${pagination?.PageSize}&KeySearch=${pagination?.KeySearch}`
-    return this._commonService.getRequestWithoutLoading(url)
+    return this._commonService.getRequest(`/api/Unit/GetList`, pagination)
   }
 
   updateUnit(request : T_MD_UNIT){

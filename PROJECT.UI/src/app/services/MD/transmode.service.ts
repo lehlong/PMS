@@ -8,15 +8,9 @@ import { T_MD_TRANSMODE } from 'src/app/models/MD/T_MD_TRANSMODE.model';
 })
 export class TransmodeService {
   constructor(private _commonService : CommonService) { }
-  
-  getListTransmode(pagination? : TransmodeFilter){
-    var url = `/api/Transmode/GetList?CurrentPage=${pagination?.CurrentPage}&PageSize=${pagination?.PageSize}&KeySearch=${pagination?.KeySearch}`
-    return this._commonService.getRequest(url)
-  }
 
   searchTransmode(pagination? : TransmodeFilter){
-    var url = `/api/Transmode/GetList?CurrentPage=${pagination?.CurrentPage}&PageSize=${pagination?.PageSize}&KeySearch=${pagination?.KeySearch}`
-    return this._commonService.getRequestWithoutLoading(url)
+    return this._commonService.getRequest(`/api/Transmode/GetList`, pagination)
   }
 
   updateTransmode(request : T_MD_TRANSMODE){

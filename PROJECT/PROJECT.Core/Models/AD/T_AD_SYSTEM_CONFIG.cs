@@ -38,7 +38,7 @@ namespace PROJECT.Core.Models.AD
         public int MAIL_PORT { get; set; }
         public int JOB_STATUS_SAP { get; set; }
         public int JOB_STATUS_TGBX { get; set; }
-        public int JOB_SEND_MAIL { get; set; }
+        public int JOB_SEND_EMAIL { get; set; }
         public int JOB_SEND_SMS { get; set; }
         public int XTTD_TIME_DIFF { get; set; }
         public DateTime LAST_SYN_VEHICLE { get; set; }

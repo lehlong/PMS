@@ -16,11 +16,12 @@ export class UnitComponent implements OnInit {
     TotalPage: 0,
     ItemCount: 0,
     PageSize: 15,
+    IsLoading: true,
     KeySearch: 'Empty',
     Data: []
   }
   ngOnInit(): void {
-    this._service.getListUnit(this.filter)
+    this._service.searchUnit(this.filter)
       .subscribe({
         next: (response) => {
           this.listUnit = response.Data.Data;

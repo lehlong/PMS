@@ -7,12 +7,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import { UserOnlineComponent } from './user-online/user-online.component';
+import { SystemConfigComponent } from './system-config/system-config.component';
 
 
 @NgModule({
   declarations: [
     HistoryLoginComponent,
-    UserOnlineComponent
+    UserOnlineComponent,
+    SystemConfigComponent
   ],
   imports: [
     CommonModule,

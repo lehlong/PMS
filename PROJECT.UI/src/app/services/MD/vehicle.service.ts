@@ -8,15 +8,9 @@ import { T_MD_VEHICLE } from 'src/app/models/MD/T_MD_VEHICLE.model';
 })
 export class VehicleService {
   constructor(private _commonService : CommonService) { }
-  
-  getListVehicle(pagination? : VehicleFilter){
-    var url = `/api/Vehicle/GetList?CurrentPage=${pagination?.CurrentPage}&PageSize=${pagination?.PageSize}&KeySearch=${pagination?.KeySearch}`
-    return this._commonService.getRequest(url)
-  }
 
   searchVehicle(pagination? : VehicleFilter){
-    var url = `/api/Vehicle/GetList?CurrentPage=${pagination?.CurrentPage}&PageSize=${pagination?.PageSize}&KeySearch=${pagination?.KeySearch}`
-    return this._commonService.getRequestWithoutLoading(url)
+    return this._commonService.getRequest(`/api/Vehicle/GetList`, pagination)
   }
 
   updateVehicle(request : T_MD_VEHICLE){

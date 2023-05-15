@@ -16,11 +16,12 @@ export class MaterialComponent implements OnInit {
     TotalPage: 0,
     ItemCount: 0,
     PageSize: 15,
+    IsLoading: true,
     KeySearch: 'Empty',
     Data: []
   }
   ngOnInit(): void {
-    this._service.getListMaterial(this.filter)
+    this._service.searchMaterial(this.filter)
       .subscribe({
         next: (response) => {
           this.listMaterial = response.Data.Data;
