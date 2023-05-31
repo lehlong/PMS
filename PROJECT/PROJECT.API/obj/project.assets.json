@@ -6383,19 +6383,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LONGD2S\\.nuget\\packages\\": {}
+    "C:\\Users\\HP\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LONGD2S\\Desktop\\SMO\\PROJECT\\PROJECT.API\\PROJECT.API.csproj",
+      "projectUniqueName": "E:\\1.Project\\1.Mobifone\\5.NEW\\PROJECT\\PROJECT.API\\PROJECT.API.csproj",
       "projectName": "PROJECT.API",
-      "projectPath": "C:\\Users\\LONGD2S\\Desktop\\SMO\\PROJECT\\PROJECT.API\\PROJECT.API.csproj",
-      "packagesPath": "C:\\Users\\LONGD2S\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LONGD2S\\Desktop\\SMO\\PROJECT\\PROJECT.API\\obj\\",
+      "projectPath": "E:\\1.Project\\1.Mobifone\\5.NEW\\PROJECT\\PROJECT.API\\PROJECT.API.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "E:\\1.Project\\1.Mobifone\\5.NEW\\PROJECT\\PROJECT.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\LONGD2S\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6409,11 +6409,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\LONGD2S\\Desktop\\SMO\\PROJECT\\PROJECT.Core\\PROJECT.Core.csproj": {
-              "projectPath": "C:\\Users\\LONGD2S\\Desktop\\SMO\\PROJECT\\PROJECT.Core\\PROJECT.Core.csproj"
+            "E:\\1.Project\\1.Mobifone\\5.NEW\\PROJECT\\PROJECT.Core\\PROJECT.Core.csproj": {
+              "projectPath": "E:\\1.Project\\1.Mobifone\\5.NEW\\PROJECT\\PROJECT.Core\\PROJECT.Core.csproj"
             },
-            "C:\\Users\\LONGD2S\\Desktop\\SMO\\PROJECT\\PROJECT.Service\\PROJECT.Service.csproj": {
-              "projectPath": "C:\\Users\\LONGD2S\\Desktop\\SMO\\PROJECT\\PROJECT.Service\\PROJECT.Service.csproj"
+            "E:\\1.Project\\1.Mobifone\\5.NEW\\PROJECT\\PROJECT.Service\\PROJECT.Service.csproj": {
+              "projectPath": "E:\\1.Project\\1.Mobifone\\5.NEW\\PROJECT\\PROJECT.Service\\PROJECT.Service.csproj"
             }
           }
         }
@@ -6508,7 +6508,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   },

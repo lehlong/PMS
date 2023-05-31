@@ -22,3 +22,15 @@ C:\Users\LONGD2S\Desktop\SMO\PROJECT\PROJECT.Core\obj\Debug\net6.0\PROJECT.Core.
 C:\Users\LONGD2S\Desktop\SMO\PROJECT\PROJECT.Core\obj\Debug\net6.0\refint\PROJECT.Core.dll
 C:\Users\LONGD2S\Desktop\SMO\PROJECT\PROJECT.Core\obj\Debug\net6.0\PROJECT.Core.pdb
 C:\Users\LONGD2S\Desktop\SMO\PROJECT\PROJECT.Core\obj\Debug\net6.0\ref\PROJECT.Core.dll
+E:\1.Project\1.Mobifone\5.NEW\PROJECT\PROJECT.Core\bin\Debug\net6.0\PROJECT.Core.deps.json
+E:\1.Project\1.Mobifone\5.NEW\PROJECT\PROJECT.Core\bin\Debug\net6.0\PROJECT.Core.dll
+E:\1.Project\1.Mobifone\5.NEW\PROJECT\PROJECT.Core\bin\Debug\net6.0\PROJECT.Core.pdb
+E:\1.Project\1.Mobifone\5.NEW\PROJECT\PROJECT.Core\obj\Debug\net6.0\PROJECT.Core.csproj.AssemblyReference.cache
+E:\1.Project\1.Mobifone\5.NEW\PROJECT\PROJECT.Core\obj\Debug\net6.0\PROJECT.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\1.Project\1.Mobifone\5.NEW\PROJECT\PROJECT.Core\obj\Debug\net6.0\PROJECT.Core.AssemblyInfoInputs.cache
+E:\1.Project\1.Mobifone\5.NEW\PROJECT\PROJECT.Core\obj\Debug\net6.0\PROJECT.Core.AssemblyInfo.cs
+E:\1.Project\1.Mobifone\5.NEW\PROJECT\PROJECT.Core\obj\Debug\net6.0\PROJECT.Core.csproj.CoreCompileInputs.cache
+E:\1.Project\1.Mobifone\5.NEW\PROJECT\PROJECT.Core\obj\Debug\net6.0\PROJECT.Core.dll
+E:\1.Project\1.Mobifone\5.NEW\PROJECT\PROJECT.Core\obj\Debug\net6.0\refint\PROJECT.Core.dll
+E:\1.Project\1.Mobifone\5.NEW\PROJECT\PROJECT.Core\obj\Debug\net6.0\PROJECT.Core.pdb
+E:\1.Project\1.Mobifone\5.NEW\PROJECT\PROJECT.Core\obj\Debug\net6.0\ref\PROJECT.Core.dll

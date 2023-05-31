@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LONGD2S\\Desktop\\SMO\\PROJECT\\PROJECT.Core\\PROJECT.Core.csproj": {}
+    "E:\\1.Project\\1.Mobifone\\5.NEW\\PROJECT\\PROJECT.Core\\PROJECT.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LONGD2S\\Desktop\\SMO\\PROJECT\\PROJECT.Core\\PROJECT.Core.csproj": {
+    "E:\\1.Project\\1.Mobifone\\5.NEW\\PROJECT\\PROJECT.Core\\PROJECT.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LONGD2S\\Desktop\\SMO\\PROJECT\\PROJECT.Core\\PROJECT.Core.csproj",
+        "projectUniqueName": "E:\\1.Project\\1.Mobifone\\5.NEW\\PROJECT\\PROJECT.Core\\PROJECT.Core.csproj",
         "projectName": "PROJECT.Core",
-        "projectPath": "C:\\Users\\LONGD2S\\Desktop\\SMO\\PROJECT\\PROJECT.Core\\PROJECT.Core.csproj",
-        "packagesPath": "C:\\Users\\LONGD2S\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LONGD2S\\Desktop\\SMO\\PROJECT\\PROJECT.Core\\obj\\",
+        "projectPath": "E:\\1.Project\\1.Mobifone\\5.NEW\\PROJECT\\PROJECT.Core\\PROJECT.Core.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "E:\\1.Project\\1.Mobifone\\5.NEW\\PROJECT\\PROJECT.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\LONGD2S\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -73,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

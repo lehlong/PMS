@@ -56,6 +56,6 @@ $(function () {
     $click = $(".sidebar-nav .nav-content a");
     $click.removeClass("highlight");
     $(this).addClass("highlight");
-    $("body").addClass("toggle-sidebar");
+    // $("body").addClass("toggle-sidebar");
   })
 });
