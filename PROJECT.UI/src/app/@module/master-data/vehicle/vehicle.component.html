@@ -1,7 +1,10 @@
 <div class="card">
-    <div class="card-header">DANH SÁCH PHƯƠNG TIỆN</div>
     <div class="card-body">
-        <div class="d-flex flex-row">
+        <h5 class="card-title">
+            <i class="bi bi-journal-text"></i>
+            Danh sách phương tiện
+        </h5>
+        <!-- <div class="d-flex flex-row">
             <div class="p-2">
                 <button type="button" class="btn btn-warning"><i class="bi bi-arrow-repeat"></i> Đồng bộ</button>
             </div>
@@ -11,7 +14,7 @@
                     <input type="text" class="form-control" placeholder="Tìm kiếm" (keyup)="searchVehicle($event)">
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
         <div *ngIf="listVehicle && listVehicle.length > 0">

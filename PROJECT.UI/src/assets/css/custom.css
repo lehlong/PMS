@@ -142,3 +142,12 @@ td {
 .page-link {
   font-size: 13px !important; 
 }
+
+.card {
+  border: none !important;
+  /* box-shadow: none !important; */
+}
+
+.card-header{
+  border: none !important;
+}
